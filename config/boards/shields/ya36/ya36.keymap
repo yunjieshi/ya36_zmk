@@ -1,0 +1,70 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+#define DEF 0
+#define NAV 1
+#define NUM 2
+#define SYM 3
+#define FUN 4
+
+/ {
+  behaviors {
+    hm: homerow_mods {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HOMEROW_MODS";
+      #binding-cells = <2>;
+      tapping_term_ms = <200>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
+    };
+  };
+
+  keymap {
+    compatible = "zmk,keymap";
+
+    DEF {
+      bindings = <
+        &kp Q &kp W &kp F &kp P &kp G  &kp J &kp L &kp U &kp Y &kp SQT
+        &hm LGUI A &hm LALT R &hm LCTRL S &hm LSHFT T &kp D  &kp H &hm LSHFT N &hm LCTRL E &hm LALT I &hm LGUI O
+        &kp Z &kp X &kp C &kp V &kp B  &kp K &kp M &kp COMMA &kp PERIOD &kp FSLH
+        &kp ESC &lt NAV SPACE &kp TAB  &lt SYM ENTER &lt NUM BSPC &lt FUN DEL
+      >;
+    };
+
+    NAV {
+      bindings = <
+        &none &none &none &none &none  &kp INS &kp HOME &kp PG_UP &kp PG_DN &kp END
+        &none &none &none &none &none  &kp CAPS &kp LEFT &kp DOWN &kp UP &kp RIGHT
+        &none &none &none &none &none  &none &none &none &none &none
+        &none &trans &none  &kp ENTER &kp BSPC &kp DEL
+      >;
+    };
+
+    NUM {
+      bindings = <
+        &kp COLON &kp NUMBER_7 &kp NUMBER_8 &kp NUMBER_9 &kp PLUS  &none &none &none &none &none
+        &kp SEMI &kp NUMBER_4 &kp NUMBER_5 &kp NUMBER_6 &kp EQUAL  &none &none &none &none &none
+        &kp COMMA &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp PERIOD  &none &none &none &none &none
+        &kp BSLH &kp NUMBER_0 &kp MINUS  &none &trans &none
+      >;
+    };
+
+    SYM {
+      bindings = <
+        &kp LBRC &kp AMPS &kp ASTRK &kp PIPE &kp RBRC  &none &none &none &none &none
+        &kp LPAR &kp DLLR &kp PRCNT &kp CARET &kp RPAR  &none &none &none &none &none
+        &kp LBKT &kp EXCL &kp AT &kp HASH &kp RBKT  &none &none &none &none &none
+        &kp TILDE &kp GRAVE &kp UNDER  &trans &none &none
+      >;
+    };
+
+    FUN {
+      bindings = <
+        &kp F12 &kp F7 &kp F8 &kp F9 &kp PSCRN  &none &none &none &none &none
+        &kp F11 &kp F4 &kp F5 &kp F6 &kp SLCK  &none &none &none &none &none
+        &kp F10 &kp F1 &kp F2 &kp F3 &kp PAUSE_BREAK  &none &none &none &none &none
+        &kp K_APP &kp SPACE &kp TAB  &none &none &trans
+      >;
+    };
+  };
+};
