@@ -1,5 +1,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
 
 #define DEF 0
 #define NAV 1
@@ -60,8 +61,8 @@
 
     FUN {
       bindings = <
-        &kp F12 &kp F7 &kp F8 &kp F9 &kp PSCRN  &none &none &none &none &none
-        &kp F11 &kp F4 &kp F5 &kp F6 &kp SLCK  &none &none &none &none &none
+        &kp F12 &kp F7 &kp F8 &kp F9 &kp PSCRN  &none &bt BT_CLR &bt BT_PRV &bt BT_NXT &none
+        &kp F11 &kp F4 &kp F5 &kp F6 &kp SLCK  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
         &kp F10 &kp F1 &kp F2 &kp F3 &kp PAUSE_BREAK  &none &none &none &none &none
         &kp K_APP &kp SPACE &kp TAB  &none &none &trans
       >;
