@@ -74,7 +74,7 @@
         &kp T &kp Q &kp W &kp E &kp R  &kp Y &kp U &kp L &kp O &kp P
         &kp G &kp A &kp S &kp D &kp F  &kp H &kp J &kp K &kp L &kp SEMI
         &kp B &kp Z &kp X &kp C &kp V  &kp N &kp M &kp COMMA &kp PERIOD &kp FSLH
-        &kp ESC &kp SPACE &kp TAB  &kp ENTER &kp BSPC &tog DEF
+        &kp ESC &kp SPACE &kp TAB  &kp ENTER &kp BSPC &tog GAM
       >;
     };
   };
