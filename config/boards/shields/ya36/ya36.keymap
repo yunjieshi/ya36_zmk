@@ -7,6 +7,7 @@
 #define NUM 2
 #define SYM 3
 #define FUN 4
+#define GAM 5
 
 / {
   behaviors {
@@ -63,8 +64,17 @@
       bindings = <
         &kp F12 &kp F7 &kp F8 &kp F9 &kp PSCRN  &none &bt BT_CLR &bt BT_PRV &bt BT_NXT &none
         &kp F11 &kp F4 &kp F5 &kp F6 &kp SLCK  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
-        &kp F10 &kp F1 &kp F2 &kp F3 &kp PAUSE_BREAK  &none &none &none &none &none
+        &kp F10 &kp F1 &kp F2 &kp F3 &kp PAUSE_BREAK  &tog GAM &none &none &none &none
         &kp K_APP &kp SPACE &kp TAB  &none &none &trans
+      >;
+    };
+
+    GAM {
+      bindings = <
+        &kp T &kp Q &kp W &kp E &kp R  &kp Y &kp U &kp L &kp O &kp P
+        &kp G &kp A &kp S &kp D &kp F  &kp H &kp J &kp K &kp L &kp SEMI
+        &kp B &kp Z &kp X &kp C &kp V  &kp N &kp M &kp COMMA &kp PERIOD &kp FSLH
+        &kp ESC &kp SPACE &kp TAB  &kp ENTER &kp BSPC &tog DEF
       >;
     };
   };
